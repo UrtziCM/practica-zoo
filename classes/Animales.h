@@ -31,7 +31,21 @@ class Animal {
 };
 
 class Mammal : Animal {
-	
+	private:
+		int legCount;
+		int daysToGest;
+		FUR furType;
+	public:
+		enum FUR {
+			DEFINITIVE,
+			VIBRISSAE,
+			PELAGE,
+			SPINES,
+			BRISTLES,
+			VELLI,
+			WOOL
+		};
+		
 };
 
 class Reptile : Animal {};
