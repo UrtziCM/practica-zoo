@@ -161,7 +161,7 @@ public:
 	bool GetPoisonous();
 	bool GetExtremities();
 
-	bool SetPoisonous(bool poisonous);
+	void SetPoisonous(bool poisonous);
 	void SetExtremities(bool extremities);
 private:
 	bool poisonous;

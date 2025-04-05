@@ -145,7 +145,7 @@ bool Squamata::GetExtremities() {
 	return extremities;
 };
 
-bool Squamata::SetPoisonous(bool poisonous) {
+void Squamata::SetPoisonous(bool poisonous) {
 	this->poisonous = poisonous;
 };
 
