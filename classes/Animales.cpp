@@ -119,3 +119,31 @@ void Reptile::SetBodyTemperature(BODY_TEMPERATURE bt) {
 void Reptile::SetSkin(SKIN skin) {
 	this->skin = skin;
 };
+
+Bird::Bird(std::string name, std::string species, int age, SEX sex, DIET diet, BEAK beak, bool flight) {
+	this->name = name;
+	this->species = species;
+	this->age = age;
+	this->sex = sex;
+	this->diet = diet;
+	this->beak = beak;
+	this->flight = flight;
+};
+
+Bird::~Bird() {};
+
+bool Bird::GetFlight() {
+	return flight;
+};
+
+Bird::BEAK Bird::GetBeak() {
+	return beak;
+};
+
+void Bird::SetFlight(bool flight) {
+	this->flight = flight;
+};
+
+void Bird::SetBeak(BEAK beak) {
+	this->beak = beak;
+};
