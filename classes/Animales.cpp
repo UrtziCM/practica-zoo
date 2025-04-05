@@ -1,8 +1,6 @@
 #include "Animales.h"
 
-int Animal::GetAge() {
-	return age;
-}
+
 
 Animal::Animal(std::string name, std::string species, int age, SEX sex, DIET diet) {
 	this->name = name;
@@ -13,3 +11,19 @@ Animal::Animal(std::string name, std::string species, int age, SEX sex, DIET die
 }
 
 Animal::~Animal() {};
+
+int Animal::GetAge() {
+	return age;
+}
+
+std::string Animal::GetName() {
+	return name;
+}
+
+Animal::DIET Animal::GetDiet(){
+	return diet;
+}
+
+Animal::SEX Animal::GetSex() {
+	return sex:
+}
