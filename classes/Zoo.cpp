@@ -97,7 +97,7 @@ void Zoo::AddAnimal() {
 
 	// Recogida de datos específicos de cada clase
 	switch (option) {
-		case 1 { // Mamifero
+		case 1 : { // Mamifero
 			int legCount, daysToGest;
 			Mammal::FUR furType;
 			// Introducir cantidad de patas
@@ -133,27 +133,27 @@ void Zoo::AddAnimal() {
 				std::cout << "ERROR: Mal formato para Pelaje, estableciendo a definitivo." << std::endl;
 				iBuffer = 1;
 			}
-
+			// Tipos de pelitos
 			switch (iBuffer) {
-			case 1: // Carnivoro
+			case 1: 
 				furType = Mammal::DEFINITIVE;
 				break;
-			case 2: // Herviboro
+			case 2: 
 				furType = Mammal::VIBRISSAE;
 				break;
-			case 3: // Omnivoro
+			case 3: 
 				furType = Mammal::PELAGE;
 				break;
-			case 4: // Omnivoro
+			case 4: 
 				furType = Mammal::SPINES;
 				break;
-			case 5: // Omnivoro
+			case 5: 
 				furType = Mammal::BRISTLES;
 				break;
-			case 6: // Omnivoro
+			case 6: 
 				furType = Mammal::VELLI;
 				break;
-			case 7: // Omnivoro
+			case 7: 
 				furType = Mammal::WOOL;
 				break;
 
@@ -167,21 +167,142 @@ void Zoo::AddAnimal() {
 			animals.push_back(m);
 			break;
 		}
-		case 2 { // Reptil
+		case 2: { // Reptil //
+			Reptile::BODY_TEMPERATURE body_temperature;
+			Reptile::SKIN skin;
 
+			std::cout << "Temperatura corporal: " << std::endl;
+			std::cout << "\t1.Poiquilotermia\n\t2.Ectotermia\n\t3.Optima\n\t4.Critica\t\n5.Heterotermia regional" << std::endl;
+			std::cin >> buffer;
+
+			try {
+				iBuffer = std::stoi(buffer);
+			}
+			catch (std::invalid_argument) {
+				std::cout << "ERROR: Mal formato para temperatura, estableciendo a optima." << std::endl;
+				iBuffer = 1;
+			}
+			// Temperaturas
+			switch (iBuffer) {
+			case 1:
+				body_temperature = Reptile::POIKILOTHERMY;
+				break;
+			case 2:
+				body_temperature = Reptile::ECTOTHERMY;
+				break;
+			case 3:
+				body_temperature = Reptile::OPTIMAL;
+				break;
+			case 4:
+				body_temperature = Reptile::CRITICAL;
+				break;
+			case 5:
+				body_temperature = Reptile::REGIONAL_HETEROTHERMY;
+				break;
+			default: // JIC: To evade errors
+				std::cout << "ERROR: Opcion fuera de rango, estableciendo a optima." << std::endl;
+				body_temperature = Reptile::OPTIMAL;
+				break;
+			}
+
+			std::cout << "Piel: " << std::endl;
+			std::cout << "\t1.Escamas queratinizadas\n\t2.Osteaodermica\n\t3.Cuerudo\n\t4.Glandular\t\n5.Muda" << std::endl;
+			std::cin >> buffer;
+
+			try {
+				iBuffer = std::stoi(buffer);
+			}
+			catch (std::invalid_argument) {
+				std::cout << "ERROR: Mal formato para piel, estableciendo a muda." << std::endl;
+				iBuffer = 5;
+			}
+			// Tipos de pieles
+			switch (iBuffer) {
+			case 1:
+				skin = Reptile::KERATINIZED_SCALY;
+				break;
+			case 2:
+				skin = Reptile::OSTEODERMIC;
+				break;
+			case 3:
+				skin = Reptile::LEATHERY;
+				break;
+			case 4:
+				skin = Reptile::GLANDULAR;
+				break;
+			case 5:
+				skin = Reptile::SHEDDING;
+				break;
+
+			default: // JIC: To evade errors
+				std::cout << "ERROR: Opcion fuera de rango, estableciendo a muda." << std::endl;
+				skin = Reptile::SHEDDING;
+				break;
+			}
+
+			Reptile* r = new Reptile(name, species, age, sex, diet, body_temperature, skin);
+			animals.push_back(r);
 			break;
 		}
 
 
-		case 3 { // Ave
+		case 3: { // Ave
+			Bird::BEAK beak;
+			bool doFly;
+
+			std::cout << "Pico: " << std::endl;
+			std::cout << "\t1.Curvado\n\t2.Pinza\n\t3.Lanza\n\t4.Gancho\t\n5.Quebrador\t\n6.Sondeador" << std::endl;
+			std::cin >> buffer;
+
+			try {
+				iBuffer = std::stoi(buffer);
+			}
+			catch (std::invalid_argument) {
+				std::cout << "ERROR: Mal formato para pico, estableciendo a pinza." << std::endl;
+				iBuffer = 2;
+			}
+			// Tipos de pieles
+			switch (iBuffer) {
+			case 1:
+				beak = Bird::CURVED;
+				break;
+			case 2:
+				beak = Bird::TWEEZER;
+				break;
+			case 3:
+				beak = Bird::SPEAR;
+				break;
+			case 4:
+				beak = Bird::HOOKED;
+				break;
+			case 5:
+				beak = Bird::CRACKER;
+				break;
+			case 6:
+				beak = Bird::PROBING;
+				break;
+
+			default: // JIC: To evade errors
+				std::cout << "ERROR: Opcion fuera de rango, estableciendo a pinza." << std::endl;
+				beak = Bird::TWEEZER;
+				break;
+			}
+
+			std::cout << "Puede volar?: [s/n]" << std::endl;
+			std::cin >> buffer;
+
+			doFly = buffer == "s";
+
+			Bird* b = new Bird(name, species, age, sex, diet, beak, doFly);
+			animals.push_back(b);
 
 			break;
 		}
-		case 4 { // Canino
+		case 4: { // Canino
 
 			break;
 		}
-		case 5 { // Acuatico
+		case 5: { // Squamata
 
 			break;
 		}
