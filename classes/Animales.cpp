@@ -56,12 +56,6 @@ std::string Animal::GetSpecies() {
 	return species;
 }
 
-Mammal::Mammal(std::string name, std::string species, int age, SEX sex, DIET diet, int legCount, int daysToGest, FUR furType) {
-	this->legCount = legCount;
-	this->daysToGest = daysToGest;
-	this->furType = furType;
-}
-
 Mammal:: ~Mammal() {};
 
 int Mammal::GetLegCount() {
@@ -88,11 +82,6 @@ void Mammal::SetFurType(FUR furType) {
 	this->furType = furType;
 };
 
-Reptile::Reptile(std::string name, std::string species, int age, SEX sex, DIET diet, BODY_TEMPERATURE bt, SKIN skin) {
-	this->body_temperature = bt;
-	this->skin = skin;
-};
-
 Reptile::~Reptile() {};
 
 Reptile::BODY_TEMPERATURE Reptile::GetBodyTemperature() {
@@ -108,11 +97,6 @@ void Reptile::SetBodyTemperature(BODY_TEMPERATURE bt) {
 
 void Reptile::SetSkin(SKIN skin) {
 	this->skin = skin;
-};
-
-Bird::Bird(std::string name, std::string species, int age, SEX sex, DIET diet, BEAK beak, bool flight) {
-	this->beak = beak;
-	this->flight = flight;
 };
 
 Bird::~Bird() {};
@@ -132,11 +116,6 @@ void Bird::SetFlight(bool flight) {
 void Bird::SetBeak(BEAK beak) {
 	this->beak = beak;
 };
-
-Canine::Canine(std::string name, std::string species, int age, SEX sex, DIET diet, std::string bff, bool gbg) {
-	this->BFF = bff;
-	this->goodBoyOrGirl = gbg;
-}
 
 Canine::~Canine() {}
 
