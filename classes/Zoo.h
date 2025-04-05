@@ -8,7 +8,7 @@ class Zoo {
 	public:
 		Zoo();
 		~Zoo();
-		void AddAnimal(Animal &a);
+		void AddAnimal();
 		void RemoveAnimal(Animal &a);
 		Animal* SearchAnimal(std::string term, bool isSpecies);
 		void ShowAnimalInfo(Animal &a);

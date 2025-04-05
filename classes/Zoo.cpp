@@ -1,11 +1,15 @@
 #include "Zoo.h"
+#include <iostream>
 
 Zoo::Zoo(){}
 
 Zoo::~Zoo(){}
 
-void Zoo::AddAnimal(Animal &a) {
-	animals.push_back(a);
+void Zoo::AddAnimal() {
+	std::cout << "Que tipo de animal quieres crear?" << std::endl;
+	std::cout << "\t1.Mamifero\n\t2.Reptil\n\t3.Ave" << std::endl;
+
+
 }
 
 void Zoo::RemoveAnimal(Animal& a) {
