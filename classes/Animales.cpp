@@ -134,3 +134,21 @@ void Canine::SetBFF(std::string bff) {
 void Canine::SetGoodBoyOrGirl(bool gbg) {
 	this->goodBoyOrGirl = gbg;
 };
+
+Squamata::~Squamata() {};
+
+bool Squamata::GetPoisonous() {
+	return poisonous;
+};
+
+bool Squamata::GetExtremities() {
+	return extremities;
+};
+
+bool Squamata::SetPoisonous(bool poisonous) {
+	this->poisonous = poisonous;
+};
+
+void Squamata::SetExtremities(bool extremities) {
+	this->extremities = extremities;
+};
