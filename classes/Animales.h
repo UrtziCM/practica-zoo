@@ -133,7 +133,7 @@ private:
 
 class Canine : public Mammal {
 public:
-	Canine(std::string name, std::string species, int age, SEX sex, DIET diet, std::string bff, bool gbg) : Mammal(name, species, age, sex, diet) {
+	Canine(std::string name, std::string species, int age, SEX sex, DIET diet, int legCount, int daysToGest, FUR furType, std::string bff, bool gbg) : Mammal(name, species, age, sex, diet, legCount, daysToGest, furType) {
 		this->BFF = bff;
 		this->goodBoyOrGirl = gbg;
 	};

@@ -154,6 +154,9 @@ Canine::Canine(std::string name, std::string species, int age, SEX sex, DIET die
 	this->age = age;
 	this->sex = sex;
 	this->diet = diet;
+	this->legCount = legCount;
+	this->daysToGest = daysToGest;
+	this->furType = furType;
 	this->BFF = bff;
 	this->goodBoyOrGirl = gbg;
 }
