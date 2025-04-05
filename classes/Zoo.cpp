@@ -241,11 +241,60 @@ void Zoo::AddAnimal() {
 			}
 
 			Reptile* r = new Reptile(name, species, age, sex, diet, body_temperature, skin);
+			animals.push_back(r);
 			break;
 		}
 
 
 		case 3: { // Ave
+			Bird::BEAK beak;
+			bool doFly;
+
+			std::cout << "Pico: " << std::endl;
+			std::cout << "\t1.Curvado\n\t2.Pinza\n\t3.Lanza\n\t4.Gancho\t\n5.Quebrador\t\n6.Sondeador" << std::endl;
+			std::cin >> buffer;
+
+			try {
+				iBuffer = std::stoi(buffer);
+			}
+			catch (std::invalid_argument) {
+				std::cout << "ERROR: Mal formato para pico, estableciendo a pinza." << std::endl;
+				iBuffer = 2;
+			}
+			// Tipos de pieles
+			switch (iBuffer) {
+			case 1:
+				beak = Bird::CURVED;
+				break;
+			case 2:
+				beak = Bird::TWEEZER;
+				break;
+			case 3:
+				beak = Bird::SPEAR;
+				break;
+			case 4:
+				beak = Bird::HOOKED;
+				break;
+			case 5:
+				beak = Bird::CRACKER;
+				break;
+			case 6:
+				beak = Bird::PROBING;
+				break;
+
+			default: // JIC: To evade errors
+				std::cout << "ERROR: Opcion fuera de rango, estableciendo a pinza." << std::endl;
+				beak = Bird::TWEEZER;
+				break;
+			}
+
+			std::cout << "Puede volar?: [s/n]" << std::endl;
+			std::cin >> buffer;
+
+			doFly = buffer == "s";
+
+			Bird* b = new Bird(name, species, age, sex, diet, beak, doFly);
+			animals.push_back(b);
 
 			break;
 		}
