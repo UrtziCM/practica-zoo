@@ -2,7 +2,7 @@
 #include <list>
 
 class Zoo {
-private:
-	list<Animal*> animals;
+	private:
+		std::list<Animal*> animals;
 
 };
