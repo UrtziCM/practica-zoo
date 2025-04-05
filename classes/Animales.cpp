@@ -147,3 +147,31 @@ void Bird::SetFlight(bool flight) {
 void Bird::SetBeak(BEAK beak) {
 	this->beak = beak;
 };
+
+Canine::Canine(std::string name, std::string species, int age, SEX sex, DIET diet, std::string bff, bool gbg) {
+	this->name = name;
+	this->species = species;
+	this->age = age;
+	this->sex = sex;
+	this->diet = diet;
+	this->BFF = bff;
+	this->goodBoyOrGirl = gbg;
+}
+
+Canine::~Canine() {}
+
+std::string GetBFF() {
+	return BFF;
+};
+
+bool GetGoodBoyOrGirl() {
+	return goodBoyOrGirl;
+};
+
+void SetBFF(std::string bff) {
+	this->BFF = bff;
+};
+
+void SetGoodBoyOrGirl(bool gbg) {
+	this->goodBoyOrGirl = gbg;
+};
