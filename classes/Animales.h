@@ -137,7 +137,7 @@ public:
 		this->BFF = bff;
 		this->goodBoyOrGirl = gbg;
 	};
-	virtual ~Canine() {};
+	virtual ~Canine();
 
 	std::string GetBFF();
 	bool GetGoodBoyOrGirl();
@@ -150,3 +150,7 @@ private:
 	bool goodBoyOrGirl;
 };
 
+class Squamata : public Reptile {
+public:
+private:
+};
