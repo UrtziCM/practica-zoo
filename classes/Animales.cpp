@@ -72,9 +72,11 @@ Mammal:: ~Mammal() {};
 int Mammal::GetLegCount() {
 	return legCount;
 };
+
 int Mammal::GetDaysToGest() {
 	return daysToGest;
 };
+
 Mammal::FUR Mammal::GetFurType() {
 	return furType;
 };
@@ -89,4 +91,31 @@ void Mammal::SetDaysToGest(int daysToGest) {
 
 void Mammal::SetFurType(FUR furType) {
 	this->furType = furType;
+};
+
+Reptile::Reptile(std::string name, std::string species, int age, SEX sex, DIET diet, BODY_TEMPERATURE bt, SKIN skin) {
+	this->name = name;
+	this->species = species;
+	this->age = age;
+	this->sex = sex;
+	this->diet = diet;
+	this->body_temperature = bt;
+	this->skin = skin;
+};
+
+Reptile::~Reptile() {};
+
+Reptile::BODY_TEMPERATURE Reptile::GetBodyTemperature() {
+	return body_temperature;
+};
+Reptile::SKIN Reptile::GetSkin() {
+	return skin;
+};
+
+void Reptile::SetBodyTemperature(BODY_TEMPERATURE bt) {
+	this->body_temperature = bt;
+};
+
+void Reptile::SetSkin(SKIN skin) {
+	this->skin = skin;
 };
