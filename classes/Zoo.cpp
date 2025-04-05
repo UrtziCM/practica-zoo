@@ -97,7 +97,7 @@ void Zoo::AddAnimal() {
 
 	// Recogida de datos específicos de cada clase
 	switch (option) {
-		case 1 { // Mamifero
+		case 1 : { // Mamifero
 			int legCount, daysToGest;
 			Mammal::FUR furType;
 			// Introducir cantidad de patas
@@ -167,21 +167,21 @@ void Zoo::AddAnimal() {
 			animals.push_back(m);
 			break;
 		}
-		case 2 { // Reptil
+		case 2: { // Reptil
 
 			break;
 		}
 
 
-		case 3 { // Ave
+		case 3: { // Ave
 
 			break;
 		}
-		case 4 { // Canino
+		case 4: { // Canino
 
 			break;
 		}
-		case 5 { // Acuatico
+		case 5: { // Acuatico
 
 			break;
 		}
