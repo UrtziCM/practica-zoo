@@ -163,18 +163,18 @@ Canine::Canine(std::string name, std::string species, int age, SEX sex, DIET die
 
 Canine::~Canine() {}
 
-std::string GetBFF() {
+std::string Canine::GetBFF() {
 	return BFF;
 };
 
-bool GetGoodBoyOrGirl() {
+bool Canine::GetGoodBoyOrGirl() {
 	return goodBoyOrGirl;
 };
 
-void SetBFF(std::string bff) {
+void Canine::SetBFF(std::string bff) {
 	this->BFF = bff;
 };
 
-void SetGoodBoyOrGirl(bool gbg) {
+void Canine::SetGoodBoyOrGirl(bool gbg) {
 	this->goodBoyOrGirl = gbg;
 };
