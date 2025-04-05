@@ -130,3 +130,22 @@ private:
 	bool flight;
 	BEAK beak;
 };
+
+class Canine : Mammal {
+public:
+	Canine(std::string name, std::string species, int age, SEX sex, DIET diet, std::string bff, bool gbg) : Mammal(name, species, age, sex, diet) {
+		this->BFF = bff;
+		this->goodBoyOrGirl = gbg;
+	};
+	virtual ~Canine() {};
+
+	std::string GetBFF();
+	bool GetGoodBoyOrGirl();
+
+	void SetBFF(std::string bff);
+	void SetGoodBoyOrGirl(bool gbg);
+
+private:
+	std::string BFF;
+	bool goodBoyOrGirl;
+};
