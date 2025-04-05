@@ -20,10 +20,39 @@ std::string Animal::GetName() {
 	return name;
 }
 
+Animal::SEX Animal::GetSex() {
+	return sex:
+}
+
 Animal::DIET Animal::GetDiet(){
 	return diet;
 }
 
-Animal::SEX Animal::GetSex() {
-	return sex:
+void Animal::SetName(std::string name)
+{
+	this->name = name;
+}
+
+void Animal::SetSpecies(std::string species)
+{
+	this->species = species;
+}
+
+void Animal::SetAge(int age)
+{
+	this->age = age;
+}
+
+void Animal::SetSex(SEX sex)
+{
+	this->sex = sex;
+}
+
+void Animal::SetDiet(DIET diet)
+{
+	this->diet = diet;
+}
+
+Animal::GetSpecies() {
+	return species;
 }
