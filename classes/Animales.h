@@ -53,7 +53,7 @@ class Mammal : Animal {
 			this->daysToGest = daysToGest;
 			this->furType = furType;
 		};
-		~Mammal();
+		virtual ~Mammal();
 
 		int GetLegCount();
 		int GetDaysToGest();
@@ -69,6 +69,64 @@ class Mammal : Animal {
 		FUR furType;
 };
 
-class Reptile : Animal {};
+class Reptile : Animal {
+	public:
+		enum BODY_TEMPERATURE {
+			POIKILOTHERMY = 0,
+			ECTOTHERMY,
+			OPTIMAL,
+			CRITICAL,
+			REGIONAL_HETEROTHERMY
+		};
+		enum SKIN {
+			KERATINIZED_SCALY = 0,
+			OSTEODERMIC,
+			LEATHERY,
+			GLANDULAR,
+			SHEDDING
+		};
 
-class Bird : Animal {};
+		Reptile(std::string name, std::string species, int age, SEX sex, DIET diet, BODY_TEMPERATURE bt, SKIN skin) : Animal(name, species, age, sex, diet) {
+			this->body_temperature = bt;
+			this->skin = skin;
+		};
+		virtual ~Reptile();
+
+		BODY_TEMPERATURE GetBodyTemperature();
+		SKIN GetSkin();
+
+		void SetBodyTemperature(BODY_TEMPERATURE bt);
+		void SetSkin(SKIN skin);
+
+	private:
+		BODY_TEMPERATURE body_temperature;
+		SKIN skin;
+};
+
+class Bird : Animal {
+public:
+	enum BEAK {
+		CURVED = 0,
+		TWEEZER,
+		SPEAR,
+		HOOKED,
+		CRACKER,
+		PROBING
+	};
+
+	Bird(std::string name, std::string species, int age, SEX sex, DIET diet, BEAK beak, bool flight) : Animal(name, species, age, sex, diet) {
+		this->beak = beak;
+		this->flight = flight;
+	};
+	virtual ~Bird();
+
+	bool GetFlight();
+	BEAK GetBeak();
+
+	void SetFlight(bool flight);
+	void SetBeak(BEAK beak);
+
+private;
+	bool flight;
+	BEAK beak;
+};
