@@ -36,7 +36,7 @@ class Animal {
 		DIET diet;
 };
 
-class Mammal : Animal {
+class Mammal : public Animal {
 	public:
 		enum FUR {
 			DEFINITIVE = 0,
@@ -69,7 +69,7 @@ class Mammal : Animal {
 		FUR furType;
 };
 
-class Reptile : Animal {
+class Reptile : public Animal {
 	public:
 		enum BODY_TEMPERATURE {
 			POIKILOTHERMY = 0,
@@ -103,7 +103,7 @@ class Reptile : Animal {
 		SKIN skin;
 };
 
-class Bird : Animal {
+class Bird : public Animal {
 public:
 	enum BEAK {
 		CURVED = 0,
@@ -131,7 +131,7 @@ private:
 	BEAK beak;
 };
 
-class Canine : Mammal {
+class Canine : public Mammal {
 public:
 	Canine(std::string name, std::string species, int age, SEX sex, DIET diet, std::string bff, bool gbg) : Mammal(name, species, age, sex, diet) {
 		this->BFF = bff;
@@ -149,3 +149,4 @@ private:
 	std::string BFF;
 	bool goodBoyOrGirl;
 };
+
