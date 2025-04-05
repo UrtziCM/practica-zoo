@@ -126,7 +126,7 @@ public:
 	void SetFlight(bool flight);
 	void SetBeak(BEAK beak);
 
-private;
+private:
 	bool flight;
 	BEAK beak;
 };

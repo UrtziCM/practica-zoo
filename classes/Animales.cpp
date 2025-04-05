@@ -1,5 +1,6 @@
 #include "Animales.h"
 
+
 Animal::Animal(std::string name, std::string species, int age, SEX sex, DIET diet) {
 	this->name = name;
 	this->species = species;
@@ -54,3 +55,38 @@ void Animal::SetDiet(DIET diet)
 std::string Animal::GetSpecies() {
 	return species;
 }
+
+Mammal::Mammal(std::string name, std::string species, int age, SEX sex, DIET diet, int legCount, int daysToGest, FUR furType) {
+	this->name = name;
+	this->species = species;
+	this->age = age;
+	this->sex = sex;
+	this->diet = diet;
+	this->legCount = legCount;
+	this->daysToGest = daysToGest;
+	this->furType = furType;
+}
+
+Mammal:: ~Mammal() {};
+
+int Mammal::GetLegCount() {
+	return legCount;
+};
+int Mammal::GetDaysToGest() {
+	return daysToGest;
+};
+Mammal::FUR Mammal::GetFurType() {
+	return furType;
+};
+
+void Mammal::SetLegCount(int legCount) {
+	this->legCount = legCount;
+};
+
+void Mammal::SetDaysToGest(int daysToGest) {
+	this->daysToGest = daysToGest;
+};
+
+void Mammal::SetFurType(FUR furType) {
+	this->furType = furType;
+};
