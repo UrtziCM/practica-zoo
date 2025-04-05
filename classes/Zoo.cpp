@@ -98,17 +98,82 @@ void Zoo::AddAnimal() {
 	// Recogida de datos específicos de cada clase
 	switch (option)	{
 		case 1: // Mamifero
+			int legCount, daysToGest;
+			Mammal::FUR furType;
+			// Introducir cantidad de patas
+			std::cout << "Cantidad de patas: " << std::endl;
+			std::cin >> buffer;
+			try {
+				legCount = std::stoi(buffer);
+			}
+			catch (std::invalid_argument) {
+				std::cout << "ERROR: Mal formato para patas, estableciendo a 0." << std::endl;
+				legCount = 0;
+			}
+
+			// Introducir dias de gestacion
+			std::cout << "Dias de gestacion: " << std::endl;
+			std::cin >> buffer;
+			try {
+				daysToGest = std::stoi(buffer);
+			}
+			catch (std::invalid_argument) {
+				std::cout << "ERROR: Mal formato en días de gest., estableciendo a 0." << std::endl;
+				daysToGest = 0;
+			}
+
+			std::cout << "Pelaje: " << std::endl;
+			std::cout << "\t1.Definitivo\n\t2.Vibrissae\n\t3.Peludo\n\t4.Espinas\t\n5.Cerdas\t\n6.Vello\t\n7.Lanudo" << std::endl;
+			std::cin >> buffer;
+
+			try {
+				iBuffer = std::stoi(buffer);
+			}
+			catch (std::invalid_argument) {
+				std::cout << "ERROR: Mal formato para Pelaje, estableciendo a definitivo." << std::endl;
+				iBuffer = 1;
+			}
+
+			switch (iBuffer) {
+			case 1: // Carnivoro
+				furType = Mammal::DEFINITIVE;
+				break;
+			case 2: // Herviboro
+				furType = Mammal::VIBRISSAE;
+				break;
+			case 3: // Omnivoro
+				furType = Mammal::PELAGE;
+				break;
+			case 4: // Omnivoro
+				furType = Mammal::SPINES;
+				break;
+			case 5: // Omnivoro
+				furType = Mammal::BRISTLES;
+				break;
+			case 6: // Omnivoro
+				furType = Mammal::VELLI;
+				break;
+			case 7: // Omnivoro
+				furType = Mammal::WOOL;
+				break;
+			
+			default: // JIC: To evade errors
+				std::cout << "ERROR: Opcion fuera de rango, estableciendo a definitivo." << std::endl;
+				furType = Mammal::DEFINITIVE;
+				break;
+			}
+
+			Mammal* m = new Mammal(name, species, age, sex, diet, legCount, daysToGest, furType);
+			animals.push_back(m);
 			break;
 		case 2: // Reptil
+
 			break;
 		case 3: // Ave
 			break;
 		case 4: // Canino
 			break;
 		case 5: // Acuatico
-			break;
-
-		default:
 			break;
 	}
 
