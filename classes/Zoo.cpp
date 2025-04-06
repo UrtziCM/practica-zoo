@@ -470,10 +470,26 @@ void Zoo::AddAnimal() {
 }
 
 void Zoo::RemoveAnimal(Animal& a) {
+	Animal* animalPointer = nullptr;
 	for (auto it = animals.begin(); it != animals.end(); it++) {
 		if ((*it) == &a) {
-			animals.erase(it);
+			animalPointer = (*it); // Guardamos el pointer para borrarlo luego
+			animals.erase(it); // Borramos de la lista
 		}
 	}
+	delete animalPointer; // Evitamos mem-leaks
+}
+
+Animal* Zoo::SearchAnimal(std::string term, bool isSpecies) {
+	Animal* a = nullptr;
+
+	for (auto it = animals.begin(); it != animals.end(); it++) {
+		// Si buscamos por nombre y el nombre concuerda O si buscamos por especie y la especie concuerda
+		if ((!isSpecies && (*it)->GetName() == term) || (isSpecies && (*it)->GetSpecies() == term)) {
+			a = (*it);
+		}
+	}
+
+	return a;
 }
 
