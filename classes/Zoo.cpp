@@ -299,7 +299,82 @@ void Zoo::AddAnimal() {
 			break;
 		}
 		case 4: { // Canino
+			int legCount, daysToGest;
+			Mammal::FUR furType;
+			// Introducir cantidad de patas
+			std::cout << "Cantidad de patas: " << std::endl;
+			std::cin >> buffer;
+			try {
+				legCount = std::stoi(buffer);
+			}
+			catch (std::invalid_argument) {
+				std::cout << "ERROR: Mal formato para patas, estableciendo a 0." << std::endl;
+				legCount = 0;
+			}
 
+			// Introducir dias de gestacion
+			std::cout << "Dias de gestacion: " << std::endl;
+			std::cin >> buffer;
+			try {
+				daysToGest = std::stoi(buffer);
+			}
+			catch (std::invalid_argument) {
+				std::cout << "ERROR: Mal formato en días de gest., estableciendo a 0." << std::endl;
+				daysToGest = 0;
+			}
+
+			std::cout << "Pelaje: " << std::endl;
+			std::cout << "\t1.Definitivo\n\t2.Vibrissae\n\t3.Peludo\n\t4.Espinas\t\n5.Cerdas\t\n6.Vello\t\n7.Lanudo" << std::endl;
+			std::cin >> buffer;
+
+			try {
+				iBuffer = std::stoi(buffer);
+			}
+			catch (std::invalid_argument) {
+				std::cout << "ERROR: Mal formato para Pelaje, estableciendo a definitivo." << std::endl;
+				iBuffer = 1;
+			}
+			// Tipos de pelitos
+			switch (iBuffer) {
+			case 1:
+				furType = Mammal::DEFINITIVE;
+				break;
+			case 2:
+				furType = Mammal::VIBRISSAE;
+				break;
+			case 3:
+				furType = Mammal::PELAGE;
+				break;
+			case 4:
+				furType = Mammal::SPINES;
+				break;
+			case 5:
+				furType = Mammal::BRISTLES;
+				break;
+			case 6:
+				furType = Mammal::VELLI;
+				break;
+			case 7:
+				furType = Mammal::WOOL;
+				break;
+
+			default: // JIC: To evade errors
+				std::cout << "ERROR: Opcion fuera de rango, estableciendo a definitivo." << std::endl;
+				furType = Mammal::DEFINITIVE;
+				break;
+			}
+
+			std::string bff;
+			bool gbg;
+
+			std::cout << "Quien es su mejor amigo?" << std::endl;
+			std::cin >> bff;
+			std::cout >> "Es un buen chico/a? [s/n]" << std::endl;
+			std::cin >> buffer;
+			gbg = buffer == "s";
+
+			Canine c = new Canine(name, species, age, sex, diet, legCount, daysToGest, furType, bff, gbg);
+			animals.push_back(c);
 			break;
 		}
 		case 5: { // Squamata
