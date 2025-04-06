@@ -56,6 +56,12 @@ std::string Animal::GetSpecies() {
 	return species;
 }
 
+std::string ToString() {
+	std::stringstream StringAnimal;
+	StringAnimal << "Animal [Name = " << name << ", Species = " << species << ", Age = " << age << ", Sex = " << sex << ", Diet = " << diet << "]";
+	return StringAnimal.str();
+}
+
 Mammal:: ~Mammal() {};
 
 int Mammal::GetLegCount() {

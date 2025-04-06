@@ -28,6 +28,8 @@ class Animal {
 		void SetSex(SEX sex);
 		void SetDiet(DIET diet);
 
+		std::string ToString();
+
 	private:
 		std::string name;
 		std::string species;
