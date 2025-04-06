@@ -152,5 +152,18 @@ private:
 
 class Squamata : public Reptile {
 public:
+	Squamata(std::string name, std::string species, int age, SEX sex, DIET diet, BODY_TEMPERATURE bt, SKIN skin, bool poisonous, bool extremities) : Reptile(name, species, age, sex, diet, bt, skin) {
+		this->poisonous = poisonous;
+		this->extremities = extremities;
+	};
+	virtual ~Squamata();
+
+	bool GetPoisonous();
+	bool GetExtremities();
+
+	void SetPoisonous(bool poisonous);
+	void SetExtremities(bool extremities);
 private:
+	bool poisonous;
+	bool extremities;
 };
