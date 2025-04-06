@@ -495,8 +495,7 @@ Animal* Zoo::SearchAnimal(std::string term, bool isSpecies) {
 
 void Zoo::ShowAnimalInfo(Animal& a)
 {
-	Animal* animal = a;
-	std::cout << animal->ToString() << std::endl;
+	std::cout << a.ToString() << std::endl;
 }
 
 void Zoo::ListAnimals()
