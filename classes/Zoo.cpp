@@ -1,10 +1,10 @@
 #include "Zoo.h"
 #include <iostream>
-#include <typeinfo>
 
 Zoo::Zoo(){}
 
 Zoo::~Zoo(){
+	// Borrar todos los animales de dentro porque los creamos con new y no los borramos en ningun sitio
 	while (animals.size() > 0) {
 		delete (*animals.begin());
 		animals.pop_front();
@@ -504,10 +504,9 @@ void Zoo::ShowAnimalInfo(Animal& a)
 	std::cout << a.ToString() << std::endl;
 }
 
-void Zoo::ListAnimals()
-{
+void Zoo::ListAnimals() {
 	for (auto it = animals.begin(); it != animals.end(); it++) {
-		std::cout << (*it)->ToString() << std::endl;
+		std::cout << (*it)->ToString() << std::endl; // Usar el tostring para mostrar su contenido
 	}
 }
 
@@ -522,11 +521,11 @@ void Zoo::ListAnimalsByType()
 	try {
 		iBuffer = std::stoi(buffer);
 	}
-	catch (std::invalid_argument) {
+	catch (std::invalid_argument) { // Por si se pasa de listo
 		std::cout << "ERROR: Mal formato, estableciendo a Mamifero." << std::endl;
 		iBuffer = 1;
 	}
-
+	// Dependiendo de la eleccion mostrar solo los de un tipo específico
 	switch (iBuffer)
 	{
 		case 1:
