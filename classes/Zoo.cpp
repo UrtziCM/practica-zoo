@@ -4,7 +4,12 @@
 
 Zoo::Zoo(){}
 
-Zoo::~Zoo(){}
+Zoo::~Zoo(){
+	while (animals.size() > 0) {
+		delete (*animals.begin());
+		animals.pop_front();
+	}
+}
 
 void Zoo::AddAnimal() {
 	int option;
