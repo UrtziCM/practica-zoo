@@ -14,7 +14,7 @@ void Clear()
 }
 
 int main(void) {
-	bool salir = false;
+	bool salir = true;
 	int opciones;
 	Zoo listaZoo;
 	while (salir)
@@ -76,10 +76,11 @@ int main(void) {
 			}
 			case 4: {//Salir
 				Clear();
-				salir = true;
+				salir = false;
 				break;
 			}
 		}
 		Clear();
 	}
+	return (0);
 }
