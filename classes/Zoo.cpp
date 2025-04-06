@@ -129,7 +129,7 @@ void Zoo::AddAnimal() {
 			}
 
 			std::cout << "Pelaje: " << std::endl;
-			std::cout << "\t1.Definitivo\n\t2.Vibrissae\n\t3.Peludo\n\t4.Espinas\t\n5.Cerdas\t\n6.Vello\t\n7.Lanudo" << std::endl;
+			std::cout << "\t1.Definitivo\n\t2.Vibrissae\n\t3.Peludo\n\t4.Espinas\n\t5.Cerdas\n\t6.Vello\n\t7.Lanudo" << std::endl;
 			std::cin >> buffer;
 
 			try {
@@ -178,7 +178,7 @@ void Zoo::AddAnimal() {
 			Reptile::SKIN skin;
 
 			std::cout << "Temperatura corporal: " << std::endl;
-			std::cout << "\t1.Poiquilotermia\n\t2.Ectotermia\n\t3.Optima\n\t4.Critica\t\n5.Heterotermia regional" << std::endl;
+			std::cout << "\t1.Poiquilotermia\n\t2.Ectotermia\n\t3.Optima\n\t4.Critica\n\t5.Heterotermia regional" << std::endl;
 			std::cin >> buffer;
 
 			try {
@@ -212,7 +212,7 @@ void Zoo::AddAnimal() {
 			}
 
 			std::cout << "Piel: " << std::endl;
-			std::cout << "\t1.Escamas queratinizadas\n\t2.Osteaodermica\n\t3.Cuerudo\n\t4.Glandular\t\n5.Muda" << std::endl;
+			std::cout << "\t1.Escamas queratinizadas\n\t2.Osteaodermica\n\t3.Cuerudo\n\t4.Glandular\n\t5.Muda" << std::endl;
 			std::cin >> buffer;
 
 			try {
@@ -257,7 +257,7 @@ void Zoo::AddAnimal() {
 			bool doFly;
 
 			std::cout << "Pico: " << std::endl;
-			std::cout << "\t1.Curvado\n\t2.Pinza\n\t3.Lanza\n\t4.Gancho\t\n5.Quebrador\t\n6.Sondeador" << std::endl;
+			std::cout << "\t1.Curvado\n\t2.Pinza\n\t3.Lanza\n\t4.Gancho\n\t5.Quebrador\n\t6.Sondeador" << std::endl;
 			std::cin >> buffer;
 
 			try {
@@ -388,7 +388,7 @@ void Zoo::AddAnimal() {
 			Reptile::SKIN skin;
 
 			std::cout << "Temperatura corporal: " << std::endl;
-			std::cout << "\t1.Poiquilotermia\n\t2.Ectotermia\n\t3.Optima\n\t4.Critica\t\n5.Heterotermia regional" << std::endl;
+			std::cout << "\t1.Poiquilotermia\n\t2.Ectotermia\n\t3.Optima\n\t4.Critica\n\t5.Heterotermia regional" << std::endl;
 			std::cin >> buffer;
 
 			try {
@@ -422,7 +422,7 @@ void Zoo::AddAnimal() {
 			}
 
 			std::cout << "Piel: " << std::endl;
-			std::cout << "\t1.Escamas queratinizadas\n\t2.Osteaodermica\n\t3.Cuerudo\n\t4.Glandular\t\n5.Muda" << std::endl;
+			std::cout << "\t1.Escamas queratinizadas\n\t2.Osteaodermica\n\t3.Cuerudo\n\t4.Glandular\n\t5.Muda" << std::endl;
 			std::cin >> buffer;
 
 			try {
