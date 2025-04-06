@@ -369,11 +369,11 @@ void Zoo::AddAnimal() {
 
 			std::cout << "Quien es su mejor amigo?" << std::endl;
 			std::cin >> bff;
-			std::cout >> "Es un buen chico/a? [s/n]" << std::endl;
+			std::cout << "Es un buen chico/a? [s/n]" << std::endl;
 			std::cin >> buffer;
 			gbg = buffer == "s";
 
-			Canine c = new Canine(name, species, age, sex, diet, legCount, daysToGest, furType, bff, gbg);
+			Canine* c = new Canine(name, species, age, sex, diet, legCount, daysToGest, furType, bff, gbg);
 			animals.push_back(c);
 			break;
 		}
