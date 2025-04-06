@@ -493,6 +493,12 @@ Animal* Zoo::SearchAnimal(std::string term, bool isSpecies) {
 	return a;
 }
 
+void Zoo::ShowAnimalInfo(Animal& a)
+{
+	Animal* animal = a;
+	std::cout << animal->ToString() << std::endl;
+}
+
 void Zoo::ListAnimals()
 {
 	for (auto it = animals.begin(); it != animals.end(); it++) {
