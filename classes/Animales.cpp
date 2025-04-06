@@ -56,7 +56,7 @@ std::string Animal::GetSpecies() {
 	return species;
 }
 
-std::string ToString() {
+std::string Animal::ToString() {
 	std::stringstream StringAnimal;
 	StringAnimal << "Name = " << name << ", Species = " << species << ", Age = " << age << ", Sex = " << sex << ", Diet = " << diet;
 	return StringAnimal.str();
@@ -88,7 +88,7 @@ void Mammal::SetFurType(FUR furType) {
 	this->furType = furType;
 };
 
-std::string ToString() const override {
+std::string Mammal::ToString() const override {
 	std::stringstream StringAnimal;
 	StringAnimal << "Name = " << this->GetName() << ", Species = " << this->GetSpecies() << ", Age = " << this->GetAge() << ", Sex = " << this->GetSex() << ", Diet = " << this->GetDiet() << ", Leg Count = " << legCount << ", Days to Gest = " << daysToGest << ", Fur Type = " << furType;
 	return StringAnimal.str();
@@ -111,7 +111,7 @@ void Reptile::SetSkin(SKIN skin) {
 	this->skin = skin;
 };
 
-std::string ToString() const override {
+std::string Reptile::ToString() const override {
 	std::stringstream StringAnimal;
 	StringAnimal << "Name = " << this->GetName() << ", Species = " << this->GetSpecies() << ", Age = " << this->GetAge() << ", Sex = " << this->GetSex() << ", Diet = " << this->GetDiet() << ", Body temperature = " << body_temperature << ", skin = " << skin;
 	return StringAnimal.str();
@@ -135,7 +135,7 @@ void Bird::SetBeak(BEAK beak) {
 	this->beak = beak;
 };
 
-std::string ToString() const override {
+std::string Bird::ToString() const override {
 	std::stringstream StringAnimal;
 	StringAnimal << "Name = " << this->GetName() << ", Species = " << this->GetSpecies() << ", Age = " << this->GetAge() << ", Sex = " << this->GetSex() << ", Diet = " << this->GetDiet() << ", Flight = " << flight << ", Beak = " << beak;
 	return StringAnimal.str();
@@ -159,7 +159,7 @@ void Canine::SetGoodBoyOrGirl(bool gbg) {
 	this->goodBoyOrGirl = gbg;
 };
 
-std::string ToString() const override {
+std::string Canine::ToString() const override {
 	std::stringstream StringAnimal;
 	StringAnimal << "Name = " << this->GetName() << ", Species = " << this->GetSpecies() << ", Age = " << this->GetAge() << ", Sex = " << this->GetSex() << ", Diet = " << this->GetDiet() << ", BFF = " << BFF << ", Is a good Boy or Girl? = " << goodBoyOrGirl;
 	return StringAnimal.str();
@@ -183,7 +183,7 @@ void Squamata::SetExtremities(bool extremities) {
 	this->extremities = extremities;
 };
 
-std::string ToString() const override {
+std::string Squamata::ToString() const override {
 	std::stringstream StringAnimal;
 	StringAnimal << "Name = " << this->GetName() << ", Species = " << this->GetSpecies() << ", Age = " << this->GetAge() << ", Sex = " << this->GetSex() << ", Diet = " << this->GetDiet() << ", Poisonous = " << poisonous << ", Extremities = " << extremities;
 	return StringAnimal.str();
