@@ -324,7 +324,7 @@ void Zoo::AddAnimal() {
 			}
 
 			std::cout << "Pelaje: " << std::endl;
-			std::cout << "\t1.Definitivo\n\t2.Vibrissae\n\t3.Peludo\n\t4.Espinas\t\n5.Cerdas\t\n6.Vello\t\n7.Lanudo" << std::endl;
+			std::cout << "\t1.Definitivo\n\t2.Vibrissae\n\t3.Peludo\n\t4.Espinas\n\t5.Cerdas\n\t6.Vello\n\t7.Lanudo" << std::endl;
 			std::cin >> buffer;
 
 			try {
