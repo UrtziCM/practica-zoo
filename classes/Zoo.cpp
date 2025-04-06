@@ -1,5 +1,6 @@
 #include "Zoo.h"
 #include <iostream>
+#include <typeinfo>
 
 Zoo::Zoo(){}
 
@@ -503,6 +504,66 @@ void Zoo::ListAnimals()
 	for (auto it = animals.begin(); it != animals.end(); it++) {
 		std::cout << (*it)->ToString() << std::endl;
 	}
+}
+
+void Zoo::ListAnimalsByType()
+{
+	std::string buffer;
+	int iBuffer;
+
+	std::cout << "Que tipo quieres visualizar?" << std::endl;
+	std::cout << "\t1.Mamiferos\n\t2.Reptiles\n\t3.Aves\n\t4.Caninos\n\t5.Squamatas" << std::endl;
+	std::cin >> buffer;
+	try {
+		iBuffer = std::stoi(buffer);
+	}
+	catch (std::invalid_argument) {
+		std::cout << "ERROR: Mal formato, estableciendo a Mamifero." << std::endl;
+		iBuffer = 1;
+	}
+
+	switch (iBuffer)
+	{
+		case 1:
+			for (auto it = animals.begin(); it != animals.end(); it++) { // Mostrar mamíferos
+				if (dynamic_cast<Mammal*>((*it)) != nullptr) {
+					this->ShowAnimalInfo((**it));
+				}
+			}
+			break;
+		case 2:
+			for (auto it = animals.begin(); it != animals.end(); it++) { // Mostrar reptiles
+				if (dynamic_cast<Reptile*>((*it)) != nullptr) {
+					this->ShowAnimalInfo((**it));
+				}
+			}
+			break;
+		case 3:
+			for (auto it = animals.begin(); it != animals.end(); it++) { // Mostrar aves
+				if (dynamic_cast<Bird*>((*it)) != nullptr) {
+					this->ShowAnimalInfo((**it));
+				}
+			}
+			break;
+		case 4:
+			for (auto it = animals.begin(); it != animals.end(); it++) { // Mostrar canidos
+				if (dynamic_cast<Canine*>((*it)) != nullptr) {
+					this->ShowAnimalInfo((**it));
+				}
+			}
+			break;
+		case 5:
+			for (auto it = animals.begin(); it != animals.end(); it++) { // Mostrar squa...
+				if (dynamic_cast<Squamata*>((*it)) != nullptr) {
+					this->ShowAnimalInfo((**it));
+				}
+			}
+			break;
+		default:
+			break;
+	}
+
+
 }
 
 

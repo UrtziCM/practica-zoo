@@ -16,6 +16,7 @@ void Clear()
 int main(void) {
 	bool salir = true;
 	int opciones;
+	std::string dev_null;
 	Zoo listaZoo;
 	while (salir)
 	{
@@ -23,7 +24,8 @@ int main(void) {
 		std::cout << "1-<Aniadir Animal>" << std::endl;
 		std::cout << "2-<Buscar Animal>" << std::endl;
 		std::cout << "3-<Mostrar lista de Animales>" << std::endl;
-		std::cout << "4-<SALIR>"<< std::endl;
+		std::cout << "4-<Mostrar lista de Animales por tipo>" << std::endl;
+		std::cout << "5-<SALIR>"<< std::endl;
 		std::cin >> opciones;
 
 		switch (opciones)
@@ -72,11 +74,18 @@ int main(void) {
 			case 3: {//Mostrar
 				Clear();
 				listaZoo.ListAnimals();
-				std::cout << "Pulse enter para continuar." << std::endl;
-				std::cin;
+				std::cout << "Escriba cualquier cosa para continuar." << std::endl;
+				std::cin >> dev_null;
 				break;
 			}
-			case 4: {//Salir
+			case 4: {//Mostrar ~ordenado
+				Clear();
+				listaZoo.ListAnimalsByType();
+				std::cout << "Escriba cualquier cosa para continuar." << std::endl;
+				std::cin >> dev_null;
+				break;
+			}
+			case 5: {//Salir
 				Clear();
 				salir = false;
 				break;
