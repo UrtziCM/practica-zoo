@@ -20,7 +20,7 @@ int main(void) {
 	while (salir)
 	{
 		std::cout << "----¿Que accion quiere realizar?----" << std::endl;
-		std::cout << "1-<Añadir Animal>" << std::endl;
+		std::cout << "1-<Aniadir Animal>" << std::endl;
 		std::cout << "2-<Buscar Animal>" << std::endl;
 		std::cout << "3-<Mostrar lista de Animales>" << std::endl;
 		std::cout << "4-<SALIR>"<< std::endl;
@@ -72,6 +72,8 @@ int main(void) {
 			case 3: {//Mostrar
 				Clear();
 				listaZoo.ListAnimals();
+				std::cout << "Pulse enter para continuar." << std::endl;
+				std::cin;
 				break;
 			}
 			case 4: {//Salir
