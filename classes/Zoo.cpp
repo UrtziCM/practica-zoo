@@ -95,7 +95,7 @@ void Zoo::AddAnimal() {
 		break;
 	}
 
-	// Recogida de datos específicos de cada clase
+	// Recogida de datos especï¿½ficos de cada clase
 	switch (option) {
 		case 1 : { // Mamifero
 			int legCount, daysToGest;
@@ -118,7 +118,7 @@ void Zoo::AddAnimal() {
 				daysToGest = std::stoi(buffer);
 			}
 			catch (std::invalid_argument) {
-				std::cout << "ERROR: Mal formato en días de gest., estableciendo a 0." << std::endl;
+				std::cout << "ERROR: Mal formato en dï¿½as de gest., estableciendo a 0." << std::endl;
 				daysToGest = 0;
 			}
 
@@ -319,7 +319,7 @@ void Zoo::AddAnimal() {
 				daysToGest = std::stoi(buffer);
 			}
 			catch (std::invalid_argument) {
-				std::cout << "ERROR: Mal formato en días de gest., estableciendo a 0." << std::endl;
+				std::cout << "ERROR: Mal formato en dï¿½as de gest., estableciendo a 0." << std::endl;
 				daysToGest = 0;
 			}
 
@@ -470,10 +470,14 @@ void Zoo::AddAnimal() {
 }
 
 void Zoo::RemoveAnimal(Animal& a) {
+	Animal* a = nullptr;
 	for (auto it = animals.begin(); it != animals.end(); it++) {
 		if ((*it) == &a) {
-			animals.erase(it);
+			a = (*it); // Guardamos el pointer para borrarlo luego
+			animals.erase(it); // Borramos de la lista
 		}
 	}
+	delete a; // Evitamos mem-leaks
+}
 }
 
