@@ -28,7 +28,7 @@ class Animal {
 		void SetSex(SEX sex);
 		void SetDiet(DIET diet);
 
-		std::string ToString();
+		virtual std::string ToString();
 
 	private:
 		std::string name;
@@ -65,6 +65,8 @@ class Mammal : public Animal {
 		void SetDaysToGest(int daysToGest);
 		void SetFurType(FUR furType);
 
+		std::string ToString() const override;
+
 	private:
 		int legCount;
 		int daysToGest;
@@ -100,6 +102,8 @@ class Reptile : public Animal {
 		void SetBodyTemperature(BODY_TEMPERATURE bt);
 		void SetSkin(SKIN skin);
 
+		std::string ToString() const override;
+
 	private:
 		BODY_TEMPERATURE body_temperature;
 		SKIN skin;
@@ -128,6 +132,8 @@ public:
 	void SetFlight(bool flight);
 	void SetBeak(BEAK beak);
 
+	std::string ToString() const override;
+
 private:
 	bool flight;
 	BEAK beak;
@@ -147,6 +153,8 @@ public:
 	void SetBFF(std::string bff);
 	void SetGoodBoyOrGirl(bool gbg);
 
+	std::string ToString() const override;
+
 private:
 	std::string BFF;
 	bool goodBoyOrGirl;
@@ -165,6 +173,9 @@ public:
 
 	void SetPoisonous(bool poisonous);
 	void SetExtremities(bool extremities);
+
+	std::string ToString() const override;
+
 private:
 	bool poisonous;
 	bool extremities;
