@@ -1,0 +1,14 @@
+
+Horas que has necesitado para hacer el trabajo
+-Hemos necesitado unas 5 horas para hacer el proyecto, entre la creación de las clases, la implementación y el fixeo del código.
+
+Grado de entendimiento de los contenidos antes y después
+-Los entendíamos antes y ahora seguimos haciéndolo pero también es un poco diferente algunas cosas en C++ asique hemos aprendido algo.
+
+La parte más difícil de implementar o entender
+-El añadir animal debido a que usamos enums para las clases y eso nos trabajo.
+
+Feedback general sobre cualquier cosa relacionada con el trabajo
+-Nos ha parecido un trabajo muy interesante y que viene muy bien para aprender y asentar las bases.
+
+Un saludo.
